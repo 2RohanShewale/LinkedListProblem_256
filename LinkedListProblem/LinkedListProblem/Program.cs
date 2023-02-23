@@ -16,7 +16,7 @@ namespace LinkedListProblem
             {
                 Console.WriteLine("*------Linked List------*");
                 Console.WriteLine("\nOptions: ");
-                Console.Write("1.Add elements\n2.Display: ");
+                Console.Write("1.Add elements\n2.Display\n3.Add in Reverse: ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -27,6 +27,11 @@ namespace LinkedListProblem
                         break;
                     case 2:
                         linkedList.Display();
+                        break;
+                    case 3:
+                        linkedList.AddReverse(56);
+                        linkedList.AddReverse(30);
+                        linkedList.AddReverse(70);
                         break;
                     default:
                         Console.WriteLine("type correct value");

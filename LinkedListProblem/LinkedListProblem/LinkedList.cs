@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,6 +42,21 @@ namespace LinkedListProblem
                     temp= temp.next;
                 }
             }
+        }
+        public void AddReverse(int data)
+        {
+            Node node = new Node(data);
+            if (head == null)
+            {
+                head = node;
+            }
+            else
+            {
+                Node temp = head;
+                node.next = temp;
+                head = node;
+            }
+            Console.WriteLine($"{node.data} is now Head");
         }
     }
 }
