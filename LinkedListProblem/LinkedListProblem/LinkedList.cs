@@ -106,7 +106,20 @@ namespace LinkedListProblem
                 Console.WriteLine("Enter Valid Position");
             }
             
-
+        }
+        public void Pop()//
+        {
+            if (head != null)
+            {
+                Node temp = head.next;
+                head = temp;
+                Display();
+            }
+            else
+            {
+                Console.WriteLine("Linked list is empty.");
+            }
+            
         }
     }
 }

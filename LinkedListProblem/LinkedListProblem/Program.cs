@@ -16,7 +16,7 @@ namespace LinkedListProblem
             {
                 Console.WriteLine("*------Linked List------*");
                 Console.WriteLine("\nOptions: ");
-                Console.Write("1.Add elements\n2.Display\n3.Add in Reverse \n4.Append \n5.Isert At a position\nEnter a number: ");
+                Console.Write("1.Add elements\n2.Display\n3.Add in Reverse \n4.Append \n5.Isert At a position\n6.Pop('Remove first element')\nEnter a number: ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -42,6 +42,9 @@ namespace LinkedListProblem
                         Console.Write("Enter Data to insert: ");int data = Convert.ToInt32(Console.ReadLine());
                         Console.Write("Enter the posititon to insert: "); int position = Convert.ToInt32(Console.ReadLine());
                         linkedList.InsertInPosition(position, data);
+                        break;
+                    case 6:
+                        linkedList.Pop();
                         break;
                     default:
                         Console.WriteLine("type correct value");
