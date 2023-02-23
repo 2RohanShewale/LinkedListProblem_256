@@ -1,8 +1,9 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 
 namespace LinkedListProblem
 {
-    internal class LinkedList
+    public class LinkedList
     {
         public Node head;
 
@@ -74,14 +75,13 @@ namespace LinkedListProblem
         }
         public void InsertInPosition(int position, int data)
         {
-
             if (head != null && position > 0)//
             {
                 Node node = new Node(data);
                 if (position == 1)
                 {
-                    node.next = head;
-                    this.head = node;
+                        node.next = head;
+                        this.head = node;
                 }
                 else
                 {
@@ -141,6 +141,24 @@ namespace LinkedListProblem
                 
             }
             Display();
+        }
+        public bool SearchValue(int value)
+        {
+            bool doesExists = false;
+            if (head != null)
+            { 
+                int position = 0;
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    if (temp.data == value) { doesExists = true; break; }
+                    position++;
+                    temp = temp.next;
+                }
+                if (doesExists) { Console.WriteLine($"{value} exists at {position + 1}th position"); }
+                else { Console.WriteLine($"{value} is not present in list"); }
+            }Display();
+            return doesExists;
         }
     }
 }
