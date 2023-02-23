@@ -73,5 +73,40 @@ namespace LinkedListProblem
             }
             else { head = node; }
         }
+        public void InsertInPosition(int position , int data)
+        {
+
+            if (head != null && position >0)//
+            {
+                Node node = new Node(data);
+                if (position == 1)
+                {
+                    node.next = head;
+                    this.head = node;
+                }
+                else 
+                {
+                    Node temp = head;
+                    for (int i = 1; i < position-1; i++)
+                    {
+                        if (temp.next == null)
+                        {
+                            Console.WriteLine("Entered position is larger than linkedlists length\n Adding data at the last node.next");
+                            break;
+                        }
+                        temp= temp.next;
+                    }
+                    node.next = temp.next;//null
+                    temp.next=node;
+                }
+                Display();
+            }
+            else
+            {
+                Console.WriteLine("Enter Valid Position");
+            }
+            
+
+        }
     }
 }

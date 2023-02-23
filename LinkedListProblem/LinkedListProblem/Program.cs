@@ -16,7 +16,7 @@ namespace LinkedListProblem
             {
                 Console.WriteLine("*------Linked List------*");
                 Console.WriteLine("\nOptions: ");
-                Console.Write("1.Add elements\n2.Display\n3.Add in Reverse \n4.Append \nEnter a number: ");
+                Console.Write("1.Add elements\n2.Display\n3.Add in Reverse \n4.Append \n5.Isert At a position\nEnter a number: ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -37,6 +37,11 @@ namespace LinkedListProblem
                         linkedList.Append(56);
                         linkedList.Append(30);
                         linkedList.Append(70);
+                        break;
+                    case 5:
+                        Console.Write("Enter Data to insert: ");int data = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Enter the posititon to insert: "); int position = Convert.ToInt32(Console.ReadLine());
+                        linkedList.InsertInPosition(position, data);
                         break;
                     default:
                         Console.WriteLine("type correct value");
