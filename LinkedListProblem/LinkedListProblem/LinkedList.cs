@@ -26,22 +26,26 @@ namespace LinkedListProblem
             Console.WriteLine($"\n{node.data} is added to the list.");
         }
 
-        public void Display()
+        public string Display()
         {
+            string str = "";
             Node temp = this.head;
             if (head != null)
             {
                 Console.WriteLine("\nItems in list are: ");
                 while (temp != null)
                 {
-                    Console.WriteLine(temp.data);
+                    Console.Write(temp.data + "->");
+                    str += temp.data + "->";
                     temp = temp.next;
                 }
+                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine("\n>>>>This list is empty");
             }
+            return str;
         }
         public void AddReverse(int data)
         {
@@ -159,6 +163,31 @@ namespace LinkedListProblem
                 else { Console.WriteLine($"{value} is not present in list"); }
             }Display();
             return doesExists;
+        }
+        public string InsertValueAfter(int data, int presentData)
+        {
+            bool doesExists = false;
+            Node node = new Node(data);
+            if(head != null)
+            {
+                Node temp = head;
+                while (temp != null)
+                {
+                    if (temp.data == presentData)
+                    {
+                        doesExists = true;
+                        break;
+                    }
+                    temp= temp.next;
+                }
+                if (doesExists)
+                {
+                    node.next = temp.next;
+                    temp.next = node;
+                }
+                else { Console.WriteLine($"{presentData} is not in the list"); }
+            }
+            return Display();
         }
     }
 }

@@ -10,14 +10,14 @@ namespace LinkedListTest
         public void DoesSearchValueFunctionReturnTrue_IfValueGivenIsPrsentInList()
         {
             for (int i = 0; i <= random.Next(1, 5); i++)
-                linkedList.Add(random.Next(10,99));
+                linkedList.Add(random.Next(10, 99));
 
             linkedList.Append(78);
 
             for (int i = 0; i <= random.Next(1, 5); i++)
                 linkedList.Add(random.Next(10, 99));
 
-            bool doesExist= linkedList.SearchValue(78);
+            bool doesExist = linkedList.SearchValue(78);
 
             Assert.AreEqual(true, doesExist);
             Assert.Pass();
