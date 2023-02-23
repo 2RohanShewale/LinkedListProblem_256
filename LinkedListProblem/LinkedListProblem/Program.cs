@@ -16,7 +16,7 @@ namespace LinkedListProblem
             {
                 Console.WriteLine("*------Linked List------*");
                 Console.WriteLine("\nOptions: ");
-                Console.Write("1.Add elements\n2.Display\n3.Add in Reverse \n4.Append \n5.Isert At a position\n6.Pop('Remove first element')\nEnter a number: ");
+                Console.Write("1.Add elements\n2.Display\n3.Add in Reverse \n4.Append \n5.Isert At a position\n6.Pop('Remove first element')\n7.PopLast('Remove Last Element')\nEnter a number: ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -46,6 +46,9 @@ namespace LinkedListProblem
                     case 6:
                         linkedList.Pop();
                         break;
+                    case 7:
+                        linkedList.PopLast();
+                        break;  
                     default:
                         Console.WriteLine("type correct value");
                         break;

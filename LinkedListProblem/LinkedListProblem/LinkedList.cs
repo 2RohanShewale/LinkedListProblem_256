@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedListProblem
 {
@@ -32,15 +27,19 @@ namespace LinkedListProblem
 
         public void Display()
         {
-            Node temp= this.head;
+            Node temp = this.head;
             if (head != null)
             {
                 Console.WriteLine("\nItems in list are: ");
                 while (temp != null)
                 {
                     Console.WriteLine(temp.data);
-                    temp= temp.next;
+                    temp = temp.next;
                 }
+            }
+            else
+            {
+                Console.WriteLine("\n>>>>This list is empty");
             }
         }
         public void AddReverse(int data)
@@ -64,7 +63,7 @@ namespace LinkedListProblem
             if (head != null)
             {
                 Node temp = head;
-                while (temp.next!= null)
+                while (temp.next != null)
                 {
                     temp = temp.next;
                 }
@@ -73,10 +72,10 @@ namespace LinkedListProblem
             }
             else { head = node; }
         }
-        public void InsertInPosition(int position , int data)
+        public void InsertInPosition(int position, int data)
         {
 
-            if (head != null && position >0)//
+            if (head != null && position > 0)//
             {
                 Node node = new Node(data);
                 if (position == 1)
@@ -84,28 +83,28 @@ namespace LinkedListProblem
                     node.next = head;
                     this.head = node;
                 }
-                else 
+                else
                 {
                     Node temp = head;
-                    for (int i = 1; i < position-1; i++)
+                    for (int i = 1; i < position - 1; i++)
                     {
                         if (temp.next == null)
                         {
                             Console.WriteLine("Entered position is larger than linkedlists length\n Adding data at the last node.next");
                             break;
                         }
-                        temp= temp.next;
+                        temp = temp.next;
                     }
                     node.next = temp.next;//null
-                    temp.next=node;
+                    temp.next = node;
                 }
                 Display();
             }
             else
             {
-                Console.WriteLine("Enter Valid Position");
+                Console.WriteLine("\n>>>>Enter Valid Position");
             }
-            
+
         }
         public void Pop()//
         {
@@ -117,9 +116,31 @@ namespace LinkedListProblem
             }
             else
             {
-                Console.WriteLine("Linked list is empty.");
+                Console.WriteLine("\n>>>>Linked list is empty.");
             }
-            
+
+        }
+        public void PopLast()
+        {
+            if (head != null)
+            {
+                if (head.next == null)
+                {
+                    head = null;
+                }
+                else
+                {
+                    Node temp = head;
+                    while (temp.next.next != null)
+                    {
+                        temp = temp.next;
+                    }
+                    //temp is second last
+                    temp.next = null;
+                }
+                
+            }
+            Display();
         }
     }
 }
