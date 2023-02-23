@@ -1,5 +1,6 @@
 ﻿using System;
 using System.CodeDom.Compiler;
+using System.Runtime.InteropServices;
 
 namespace LinkedListProblem
 {
@@ -187,6 +188,33 @@ namespace LinkedListProblem
                 }
                 else { Console.WriteLine($"{presentData} is not in the list"); }
             }
+            return Display();
+        }
+        public string Delete(int data)
+        {
+            if (head!= null)
+            {
+                if (head.next == null && head.data == data)//If it only contains head
+                    head = null;
+                else
+                {
+                    if (head.data == data)
+                    {
+                        head = head.next;
+                    }
+                    else
+                    {
+                        Node temp = head;
+                        while (temp != null)
+                        {
+                            if (temp.next.data == data) { break; }
+                            temp = temp.next;
+                        }
+                        temp.next = temp.next.next;
+                    }
+                }
+            }
+            
             return Display();
         }
     }

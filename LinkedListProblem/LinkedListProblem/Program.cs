@@ -12,7 +12,7 @@ namespace LinkedListProblem
             {
                 Console.WriteLine("*------Linked List------*");
                 Console.WriteLine("\nOptions: ");
-                Console.Write("1.Add elements\n2.Display\n3.Add in Reverse \n4.Append \n5.Isert At a position\n6.Pop('Remove first element')\n7.PopLast('Remove Last Element')\n8.Search an element\n9.Insert Data after perticuler Node\nEnter a number: ");
+                Console.Write("1.Add elements\n2.Display\n3.Add in Reverse \n4.Append \n5.Isert At a position\n6.Pop('Remove first element')\n7.PopLast('Remove Last Element')\n8.Search an element\n9.Insert Data after perticuler Node\n10.Delete Particular Data\nEnter a number: ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -53,6 +53,10 @@ namespace LinkedListProblem
                         Console.Write("Enter Data to insert: "); data = Convert.ToInt32(Console.ReadLine());
                         Console.Write("Enter the data of node to insert after: "); int previousData = Convert.ToInt32(Console.ReadLine());
                         linkedList.InsertValueAfter(data, previousData);
+                        break;
+                    case 10:
+                        Console.Write("Enter Data to Delete: "); data = Convert.ToInt32(Console.ReadLine());
+                        linkedList.Delete(data);
                         break;
                     default:
                         Console.WriteLine("type correct value");
